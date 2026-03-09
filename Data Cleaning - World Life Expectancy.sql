@@ -181,6 +181,17 @@ WHERE t1.`Life expectancy` IS NULL;
 
 ---------------------------------------------------------------
 
+-- Data Cleaning issues identified during EDA process
+
+---------------------------------------------------------------
 
 SELECT *
 FROM life;
+
+UPDATE life
+SET `Life expectancy` = NULL
+WHERE `Life expectancy` = 0;
+
+UPDATE life
+SET GDP = NULL
+WHERE GDP = 0;
