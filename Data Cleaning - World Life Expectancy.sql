@@ -147,6 +147,10 @@ UPDATE life
 SET `Life expectancy` = NULL
 WHERE `Life expectancy` = '';
 
+SELECT Country, `Year`, `Life expectancy`
+FROM life
+WHERE `Life expectancy` IS NULL; 
+
 -- Identifying the values to use to populate the null values
 SELECT t1.Row_ID,
     t1.Country, 
@@ -166,7 +170,7 @@ WHERE t1.`Life expectancy` IS NULL;
 UPDATE life
 SET `Life expectancy` = CAST(`Life expectancy` AS DECIMAL(3,1));
 
--- Populating the blanks
+-- Populating the null values
 UPDATE life t1 INNER JOIN life t2
     ON t1.Country = t2.Country AND t1.`Year` = t2.`Year`-1
     INNER JOIN life t3
