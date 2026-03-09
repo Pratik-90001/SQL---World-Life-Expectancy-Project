@@ -167,8 +167,8 @@ FROM life t1 INNER JOIN life t2
 WHERE t1.`Life expectancy` IS NULL; 
 
 -- Type-casting 'Life expectancy' from String to Float type
-UPDATE life
-SET `Life expectancy` = CAST(`Life expectancy` AS DECIMAL(3,1));
+ALTER TABLE life
+MODIFY COLUMN `Life expectancy` DECIMAL(3,1);
 
 -- Populating the null values
 UPDATE life t1 INNER JOIN life t2
