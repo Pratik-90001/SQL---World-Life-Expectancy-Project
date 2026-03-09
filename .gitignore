@@ -1,10 +1,5 @@
 # Ignore these files
-P1 - My Solution.sql
-P1 - My Thinking Documentation.sql
-P1 - My Thinking.sql
-p1__my_solution_V2.sql
-Potential Error Fix - World Life Expectancy Script.sql
-demo.session.sql
-demo.sql
+
+World Life Expectancy Script.sql
 Data - World Life Expectancy.csv
 .vscode/settings.json

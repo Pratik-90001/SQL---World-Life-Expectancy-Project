@@ -18,11 +18,13 @@ SELECT * FROM world_life_expectancy;
 
 ----------------------------------------------------------------
 
+-- Finding the duplicates
 SELECT Country, `Year`, COUNT(*)
 FROM life
 GROUP BY COuntry, `Year`
 HAVING COUNT(*) >= 2;
 
+-- Identifying the duplicates for removal
 WITH 
 CTE1 AS (
     SELECT *,
@@ -54,3 +56,10 @@ WHERE rn = 1;
 
 SELECT *
 FROM life_v1;
+
+-- Confirming the removal of duplicates
+SELECT Country, `Year`, COUNT(*)
+FROM life_v1
+GROUP BY COuntry, `Year`
+HAVING COUNT(*) >= 2;
+
