@@ -188,10 +188,14 @@ WHERE t1.`Life expectancy` IS NULL;
 SELECT *
 FROM life;
 
+-- Converting blank values in 'life expectancy' column to NULL
 UPDATE life
 SET `Life expectancy` = NULL
 WHERE `Life expectancy` = 0;
 
+-- Converting blank values in 'GDP' column to NULL
 UPDATE life
 SET GDP = NULL
 WHERE GDP = 0;
+
+

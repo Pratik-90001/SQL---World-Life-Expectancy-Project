@@ -28,7 +28,9 @@ GROUP BY Country
 ORDER BY max_life DESC
 LIMIT 10;
 
+----------------------------------------------------------------
 -- Correlation between life expectancy and GDP
+----------------------------------------------------------------
 
 -- Avg life expectancy for countries with low avg GDP
 SELECT Country, 
@@ -118,3 +120,11 @@ SELECT *
 FROM CTE1
 WHERE GDP_category = '> Avg Global GDP' AND life_exp_category = '<= Avg Global Life';
 
+----------------------------------------------------------------
+-- Correlation between GDP & BMI
+----------------------------------------------------------------
+
+SELECT Country, GDP, BMI, `Life expectancy`
+FROM life
+WHERE `Year` = 2022
+ORDER BY BMI DESC;
